@@ -1,0 +1,60 @@
+
+
+<div class="mat-elevation-z8 b1">
+    <div class="example-button-row btn1">
+        <button mat-flat-button  (click)="openDialog()" ><strong>Ajouter Un Devise</strong>  </button>
+      
+    </div>
+   <br>
+
+   <h6>Liste Des Devises :</h6>
+   <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+
+   <br>
+    <table mat-table [dataSource]="dataSource">
+  
+      
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="libelle">
+        <th mat-header-cell *matHeaderCellDef> Devise </th>
+        <td mat-cell *matCellDef="let element"> {{element.libelle}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="taux">
+        <th mat-header-cell *matHeaderCellDef> Taux </th>
+        <td mat-cell *matCellDef="let element"> {{element.taux}} </td>
+      </ng-container>
+      <!-- Action  -->
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Action</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-flat-button  class="bg-blue-600" (click)="openDialog2(element)" ><strong>Modifier</strong>  </button>
+          <button mat-flat-button  class="bg-danger" (click)="openDialog1(element)"><strong> Supprimer</strong>  </button>
+        
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[3, 6, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements" #paginator>
+    </mat-paginator>
+  </div>
+
+
+
+ 

@@ -1,0 +1,23 @@
+<div mat-dialog-content>
+    <h4>Modifier Devise</h4>
+    <mat-form-field class="w1">
+      <mat-label>Devises </mat-label>
+      <input matInput type="text" [(ngModel)]="data1.libelle" name="libelle" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="w1">
+      <mat-label>Description </mat-label>
+      <input matInput type="text" [(ngModel)]="data1.description" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="w1">
+      <mat-label>Taux </mat-label>
+      <input matInput type="number" [(ngModel)]="data1.taux" required>
+    </mat-form-field>
+    
+    
+</div>
+<div mat-dialog-actions >
+  <button mat-button (click)="onNoClick()"class="w2">Annuler</button>
+  <button mat-button class="w2" (click)="modifier()" >Modifier</button>
+</div>

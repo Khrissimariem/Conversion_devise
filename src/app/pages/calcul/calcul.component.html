@@ -1,0 +1,37 @@
+<div class="mat-elevation-z8 b2">
+  
+  <mat-form-field >
+    <mat-label>Montant en TND</mat-label>
+    <input matInput  type="number" name="put1" [(ngModel)]="put1">
+  </mat-form-field>
+ 
+  <mat-form-field class="c1">
+    
+    <mat-label>Devise</mat-label>
+    <mat-select [(ngModel)]="selectedValue" >
+      @for (dev of devises; track dev) {
+        <mat-option [value]="dev.libelle">{{dev.libelle}}</mat-option>
+      }
+      
+    </mat-select>
+    
+  </mat-form-field> 
+  
+  <p> Selected food: {{selectedValue}} </p>
+  
+  
+  <button type="button" class="btn btn-primary  c2" (click)="afficher()">Convertir</button>
+
+  <ng-container *ngIf="visible">
+    <div class="bg-blue-100 c4" >
+       
+      <strong>Montant Converti :</strong> {{put1}} <br>
+      <strong>Devise :</strong> {{dev1.libelle}} :{{dev1.taux}} <br>
+      <strong>Résultat : </strong>{{res.resultat}} 
+      
+    </div>
+   </ng-container>
+ 
+
+ 
+</div>

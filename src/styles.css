@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.header_style{
+    height: 130px;
+    padding-top: 0px;
+}
+.sidbar_style{
+    
+    
+    border-right: 5px solid rgb(216, 210, 210);
+    height: 500px;
+}
+.cont-style{
+    margin-top: -450px;
+    padding-left: 20%;
+    position: relative;
+    width: auto;
+    
+
+}
+.bnt1{
+    height: 20px;
+    padding-top: 10px;
+}
+.b1{
+    padding: 50px;
+    padding-top:20px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
